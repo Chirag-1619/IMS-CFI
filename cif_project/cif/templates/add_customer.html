@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="date"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        form textarea {
+            height: 100px;
+        }
+
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Customer</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        {{ form.name }}
+        <label for="address">Address:</label>
+        {{ form.address }}
+        <label for="branch_code">Branch Code:</label>
+        {{ form.branch_code }}
+        <label for="contact_details">Contact Details:</label>
+        {{ form.contact_details }}
+        <label for="date_of_purchase">Date of Purchase:</label>
+        {{ form.date_of_purchase }}
+        <label for="date_of_installation">Date of Installation:</label>
+        {{ form.date_of_installation }}
+        <label for="bills">Bills:</label>
+        {{ form.bills }}
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Detail - {{ customer.name }}</title>
+</head>
+<body>
+    <h1>Customer Detail - {{ customer.name }}</h1>
+    <p>Address: {{ customer.address }}</p>
+    <!-- Display other customer details as needed -->
+
+    <h2>Transactions for Machine Model: {{ selected_field }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction Date</th>
+                <!-- Add other transaction fields as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.transaction_date }}</td>
+                <!-- Display other transaction fields as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
